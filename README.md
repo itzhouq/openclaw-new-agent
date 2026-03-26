@@ -181,7 +181,7 @@ git clone https://github.com/itzhouq/openclaw-new-agent.git
 ### clawhub 方式
 
 ```
-clawhub install openclaw-new-agent
+npx clawhub@latest install openclaw-new-agent
 ```
 
 或手动复制到 `~/.openclaw/skills/` 目录。
