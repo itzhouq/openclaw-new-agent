@@ -7,6 +7,8 @@
 
 ---
 
+仓库地址：https://github.com/itzhouq/openclaw-new-agent
+
 ## 痛点：官方配置太复杂，容易改错
 
 在 OpenClaw 上新增一个独立的飞书机器人，官方流程需要：
@@ -54,11 +56,17 @@
 示例：
 > "创建一个新机器人：码字精，用于写作辅助"
 
+![image-20260326180008946](assets/image-20260326180008946.png)
+
 AI 会自动询问：
 - App ID & App Secret（没有？点击上面链接创建）
 - 工作区名称（默认建议格式）
 
+![image-20260326175903868](assets/image-20260326175903868.png)
+
 ---
+
+![image-20260326180114565](assets/image-20260326180114565.png)
 
 ### Step 1：自动备份
 
@@ -93,6 +101,16 @@ AI 自动创建与主 workspace **平级**的目录：
 AI 使用 `gateway config.patch` 局部更新，**不会覆盖你的其他配置**。
 
 ---
+
+
+
+![image-20260326180234755](assets/image-20260326180234755.png)
+
+![image-20260326180300244](assets/image-20260326180300244.png)
+
+![image-20260326180334922](assets/image-20260326180334922.png)
+
+
 
 ### Step 4：自动获取 allowFrom
 
@@ -154,7 +172,15 @@ AI 自动执行回滚。
 
 ## 安装
 
-```bash
+### Github方式
+
+```
+git clone https://github.com/itzhouq/openclaw-new-agent.git
+```
+
+### clawhub 方式
+
+```
 clawhub install openclaw-new-agent
 ```
 
