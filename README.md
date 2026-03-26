@@ -56,17 +56,17 @@
 示例：
 > "创建一个新机器人：码字精，用于写作辅助"
 
-![image-20260326180008946](assets/image-20260326180008946.png)
+![image-20260326180008946](https://github.com/itzhouq/openclaw-new-agent/blob/master/assets/image-20260326180008946.png)
 
 AI 会自动询问：
 - App ID & App Secret（没有？点击上面链接创建）
 - 工作区名称（默认建议格式）
 
-![image-20260326175903868](assets/image-20260326175903868.png)
+![image-20260326175903868](https://github.com/itzhouq/openclaw-new-agent/blob/master/assets/image-20260326175903868.png)
 
 ---
 
-![image-20260326180114565](assets/image-20260326180114565.png)
+![image-20260326180114565](https://github.com/itzhouq/openclaw-new-agent/blob/master/assets/image-20260326180114565.png)
 
 ### Step 1：自动备份
 
@@ -104,11 +104,11 @@ AI 使用 `gateway config.patch` 局部更新，**不会覆盖你的其他配置
 
 
 
-![image-20260326180234755](assets/image-20260326180234755.png)
+![image-20260326180234755](https://github.com/itzhouq/openclaw-new-agent/blob/master/assets/image-20260326180234755.png)
 
-![image-20260326180300244](assets/image-20260326180300244.png)
+![image-20260326180300244](https://github.com/itzhouq/openclaw-new-agent/blob/master/assets/image-20260326180300244.png)
 
-![image-20260326180334922](assets/image-20260326180334922.png)
+![image-20260326180334922](https://github.com/itzhouq/openclaw-new-agent/blob/master/assets/image-20260326180334922.png)
 
 
 
