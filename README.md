@@ -172,19 +172,36 @@ AI 自动执行回滚。
 
 ## 安装
 
-### Github方式
+### 方式一：skills CLI（推荐）
 
-```
-git clone https://github.com/itzhouq/openclaw-new-agent.git
+skills CLI 会自动从 GitHub 克隆并安装到全局：
+
+```bash
+npx skills add itzhouq/openclaw-new-agent@openclaw-new-agent -g -y
 ```
 
-### clawhub 方式
+> 注意：此方式通过 GitHub 安装，npm 包 `@itzhouq/openclaw-new-agent` 的安装量用于 skills.sh 搜索排名
 
-```
+### 方式二：clawhub
+
+```bash
 npx clawhub@latest install openclaw-new-agent
 ```
 
-或手动复制到 `~/.openclaw/skills/` 目录。
+### 方式三：npm + 手动复制
+
+```bash
+npm install @itzhouq/openclaw-new-agent
+# 然后将 node_modules/@itzhouq/openclaw-new-agent/SKILL.md 复制到 skills 目录
+```
+
+### 方式四：手动下载
+
+```bash
+git clone https://github.com/itzhouq/openclaw-new-agent.git
+```
+
+或直接从 GitHub 下载 SKILL.md，手动放入 `~/.openclaw/workspace/skills/` 目录。
 
 ---
 
