@@ -57,10 +57,6 @@ git clone https://github.com/itzhouq/openclaw-new-agent.git ~/.openclaw/workspac
 
 <img src="assets/wechat.png" alt="wechat" width="25%" height="25%" />
 
-<img src="https://github.com/itzhouq/openclaw-new-agent/blob/master/assets/image-20260326175903868.png" alt="创建飞书机器人" width="50%" height="50%" />
-
-<img src="https://github.com/itzhouq/openclaw-new-agent/blob/master/assets/image-20260326180114565.png" alt="创建飞书机器人2" width="50%" height="50%" />
-
 ## 二、一键创建飞书机器人
 
 👉 https://open.feishu.cn/page/openclaw?form=multiAgent
