@@ -55,9 +55,11 @@ git clone https://github.com/itzhouq/openclaw-new-agent.git ~/.openclaw/workspac
 
 如果确实安装失败或者网络问题无法下载，可以联系我发你，有问题也欢迎call我或者提交issue。
 
-<img src="https://github.com/itzhouq/openclaw-new-agent/blob/master/assets/image-20260326175903868.png" alt="创建飞书机器人" style="zoom:50%;" />
+<img src="assets/wechat.png" alt="wechat" width="25%" height="25%" />
 
-<img src="https://github.com/itzhouq/openclaw-new-agent/blob/master/assets/image-20260326180114565.png" alt="创建飞书机器人2" style="zoom:50%;" />
+<img src="https://github.com/itzhouq/openclaw-new-agent/blob/master/assets/image-20260326175903868.png" alt="创建飞书机器人" width="50%" height="50%" />
+
+<img src="https://github.com/itzhouq/openclaw-new-agent/blob/master/assets/image-20260326180114565.png" alt="创建飞书机器人2" width="50%" height="50%" />
 
 ## 二、一键创建飞书机器人
 
@@ -65,7 +67,9 @@ git clone https://github.com/itzhouq/openclaw-new-agent.git ~/.openclaw/workspac
 
 直接生成包含 WebSocket 事件订阅的模板应用，无需手动配置权限。生成完后显示 AppId 和 appSecret 页面不要关闭后面要用。
 
-<img src="assets/wechat.png" alt="wechat" style="zoom:25%;" />
+<img src="https://github.com/itzhouq/openclaw-new-agent/blob/master/assets/image-20260326175903868.png" alt="创建飞书机器人" style="zoom:50%;" />
+
+<img src="https://github.com/itzhouq/openclaw-new-agent/blob/master/assets/image-20260326180114565.png" alt="创建飞书机器人2" style="zoom:50%;" />
 
 ## 三：确认基本信息
 
@@ -97,7 +101,7 @@ AI 会自动询问：App ID & App Secret（没有？点击上面链接创建）
 
 你会收到一条类似消息。
 
-<img src="assets/image-20260329015924649.png" alt="image-20260329015924649" style="zoom:50%;" />
+<img src="assets/image-20260329015924649.png" alt="image-20260329015924649" width="50%" height="50%" />
 
 可能稍微有点出入（跟具体你使用的模型有关系）。
 
@@ -107,7 +111,7 @@ AI 会自动询问：App ID & App Secret（没有？点击上面链接创建）
 
 飞书有个通知，你点进去就能跟新机器人对话。
 
-<img src="assets/image-20260329020142441.png" alt="image-20260329020142441" style="zoom: 25%;" />
+<img src="assets/image-20260329020142441.png" alt="image-20260329020142441" width="50%" height="50%" />
 
 随便跟新机器人发个消息。这部分目的是让机器人自动配置 allowFrom 。
 
@@ -129,7 +133,7 @@ AI 会自动询问：App ID & App Secret（没有？点击上面链接创建）
 
 如果你遇到机器人没回复，继续往后看（模型执行有一定的随机性）。
 
-<img src="assets/image-20260329021244794.png" alt="image-20260329021244794" style="zoom:25%;" />
+<img src="assets/image-20260329021244794.png" alt="image-20260329021244794" width="50%" height="50%" />
 
 ## 常见问题：新机器人不回你
 
