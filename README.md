@@ -1,13 +1,12 @@
-# openclaw-new-agent
+# 一个skills在OpenClaw上丝滑创建多个独立的飞书机器人Agent
 
-> 在 OpenClaw 上丝滑创建多个独立的飞书机器人 Agent
-
-[![OpenClaw Skill](https://img.shields.io/badge/OpenClaw-Skill-blue)](https://clawhub.com)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
----
+[![OpenClaw Skill](https://img.shields.io/badge/OpenClaw-Skill-blue)](https://clawhub.com)[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 仓库地址：https://github.com/itzhouq/openclaw-new-agent
+
+介绍视频：https://www.bilibili.com/video/BV16fXLBkEwo
+
+演示视频：（预计3月29日更新） https://space.bilibili.com/29606169
 
 ## 痛点：官方配置太复杂，容易改错
 
@@ -35,125 +34,132 @@
 
 ---
 
-## 快速开始
+## 一、安装
 
-### 一键创建飞书机器人（如需新建）
+### 安装方式一：clawhub 安装 （推荐）
+
+```bash
+# 执行下面命令或者告诉Openclaw：通过clawhub 安装 openclaw-new-agent 这个 skills。
+npx clawhub@latest install openclaw-new-agent
+# 安装完成实际会下载到 skills 目录下： ~/.openclaw/workspace/skills
+```
+
+### 安装方式二：手动下载
+
+```bash
+git clone https://github.com/itzhouq/openclaw-new-agent.git ~/.openclaw/workspace/skills
+# 手动安装完最好重启下网关，在终端执行：openclaw gateway restart
+```
+
+### 安装方式三：联系我发你安装包
+
+如果确实安装失败或者网络问题无法下载，可以联系我发你，有问题也欢迎call我或者提交issue。
+
+<img src="https://github.com/itzhouq/openclaw-new-agent/blob/master/assets/image-20260326175903868.png" alt="创建飞书机器人" style="zoom:50%;" />
+
+<img src="https://github.com/itzhouq/openclaw-new-agent/blob/master/assets/image-20260326180114565.png" alt="创建飞书机器人2" style="zoom:50%;" />
+
+## 二、一键创建飞书机器人
 
 👉 https://open.feishu.cn/page/openclaw?form=multiAgent
 
-直接生成包含 WebSocket 事件订阅的模板应用，无需手动配置权限。
+直接生成包含 WebSocket 事件订阅的模板应用，无需手动配置权限。生成完后显示 AppId 和 appSecret 页面不要关闭后面要用。
+
+<img src="assets/wechat.png" alt="wechat" style="zoom:25%;" />
+
+## 三：确认基本信息
+
+直接在现有飞书机器人聊天界面告诉 AI 助手："创建一个新机器人：[名称]，[用途]"
+
+示例："创建一个新机器人：码字精，用于写作辅助"
+
+<img src="https://github.com/itzhouq/openclaw-new-agent/blob/master/assets/image-20260326180008946.png" alt="确认机器人" style="zoom:50%;" />
+
+AI 会自动询问：App ID & App Secret（没有？点击上面链接创建）
+
+## 四、提供飞书机器人的信息
+
+核心是把这两个信息发给机器人。机器人名称、职责、工作区文件夹名称等是可选调整项目，默认即可。
+
+<img src="https://github.com/itzhouq/openclaw-new-agent/blob/master/assets/image-20260326180234755.png" alt="确认机器人" style="zoom:100%;" />
+
+到这里，Openclaw 已经在自动创建新的 Agent，备份，修改配置文件。下面列举的是 AI 做的事你不需要改动。
+
+- AI 自动备份文件：`cp ~/.openclaw/openclaw.json ~/.openclaw/openclaw.json.before{agentId}bak`
+- AI 自动创建新工作区：`~/.openclaw/`workspace-{name}/ 
+- AI 自动使用 `gateway config.patch` 局部更新，**不会覆盖你的其他配置**。
+
+稍微等待一会儿，等待创建完成。
+
+
+
+## 五、新机器人创建完成
+
+你会收到一条类似消息。
+
+<img src="assets/image-20260329015924649.png" alt="image-20260329015924649" style="zoom:50%;" />
+
+可能稍微有点出入（跟具体你使用的模型有关系）。
+
+你只需要关心的是：向新创建的机器人发个消息。
+
+## 六、给新机器人发送消息
+
+飞书有个通知，你点进去就能跟新机器人对话。
+
+<img src="assets/image-20260329020142441.png" alt="image-20260329020142441" style="zoom: 25%;" />
+
+随便跟新机器人发个消息。这部分目的是让机器人自动配置 allowFrom 。
+
+**如果这一步失败（发了很多次消息也没收到回复），看后续的常见问题。**
 
 ---
 
-## 丝滑创建流程
+## 七、验证
 
-### Step 0：确认基本信息
+稍微等待一会儿，给主机器人（不是新的）发个消息：我已经向新机器人发了消息，完成后后续配置。
 
-告诉 AI 助手：
+<img src="https://github.com/itzhouq/openclaw-new-agent/blob/master/assets/image-20260326180334922.png" alt="验证" style="zoom:50%;" />
 
-> "创建一个新机器人：[名称]，[用途]"
+类似这样的消息，说明主机器人完成了配置。
 
-示例：
-> "创建一个新机器人：码字精，用于写作辅助"
+如果到这一步你给新的机器人发消息能得到回复，那么恭喜你完成了多机器人配置。
 
-![image-20260326180008946](https://github.com/itzhouq/openclaw-new-agent/blob/master/assets/image-20260326180008946.png)
+你可以继续创建更多的 Agent。如果能帮到你，帮我打个 star 非常感谢！。
 
-AI 会自动询问：
-- App ID & App Secret（没有？点击上面链接创建）
-- 工作区名称（默认建议格式）
+如果你遇到机器人没回复，继续往后看（模型执行有一定的随机性）。
 
-![image-20260326175903868](https://github.com/itzhouq/openclaw-new-agent/blob/master/assets/image-20260326175903868.png)
+<img src="assets/image-20260329021244794.png" alt="image-20260329021244794" style="zoom:25%;" />
 
----
+## 常见问题：新机器人不回你
 
-![image-20260326180114565](https://github.com/itzhouq/openclaw-new-agent/blob/master/assets/image-20260326180114565.png)
+大概率是新机器人的 allowlist 没有配置对。在终端命令行执行：`openclaw logs --follow`
 
-### Step 1：自动备份
+再给新的机器人随便发个消息。观察终端，如果能看到下面的关键信息：
 
-AI 自动执行：
+![image-20260329021611819](assets/image-20260329021611819.png)
 
-```bash
-cp ~/.openclaw/openclaw.json ~/.openclaw/openclaw.json.before{agentId}bak
-```
+复制这个 OU 开头的标识码手动放在 `~/openclaw/openclaw.json`中。
 
-**每次配置变更前都会备份**，坏了随时回滚。
+新启动一个终端执行：`cd .openclaw && open .` 最终打开 `openclaw.json`
 
----
+![image-20260329022140372](assets/image-20260329022140372.png)
 
-### Step 2：创建工作区
+操作：
 
-AI 自动创建与主 workspace **平级**的目录：
+![image-20260329022431694](assets/image-20260329022431694.png)
 
-```
-~/.openclaw/
-├── workspace/                    # 主工作区
-└── workspace-{name}/           # 新工作区
-    ├── SOUL.md                 # Agent 角色定义
-    ├── USER.md                 # 用户信息
-    ├── AGENTS.md               # 工作区说明
-    └── memory/                 # 每日日志
-```
+保存后终端中执行：`openclaw gateway restart` 重启网关。
 
----
+再给新机器人发送消息，能收到回复就是成功了！
 
-### Step 3：添加配置
+如果还是没有成功，可以参考演示视频重试。再有问题你就联系我看看吧。
 
-AI 使用 `gateway config.patch` 局部更新，**不会覆盖你的其他配置**。
+## 常见问题：新机器人不回你老机器人也挂了
 
----
+懒得写，看我演示视频介绍怎么排查吧。
 
-
-
-![image-20260326180234755](https://github.com/itzhouq/openclaw-new-agent/blob/master/assets/image-20260326180234755.png)
-
-![image-20260326180300244](https://github.com/itzhouq/openclaw-new-agent/blob/master/assets/image-20260326180300244.png)
-
-![image-20260326180334922](https://github.com/itzhouq/openclaw-new-agent/blob/master/assets/image-20260326180334922.png)
-
-
-
-### Step 4：自动获取 allowFrom
-
-配置后**不需要你记 open_id**。
-
-你只需要给新机器人发一条消息，AI 自动从日志中识别发送者 ID 并补充到白名单。
-
----
-
-### Step 5：验证成功
-
-AI 自动检查：
-
-```bash
-openclaw doctor --non-interactive
-```
-
-确认输出包含新 Agent。
-
----
-
-## 回滚方案（如果改坏了）
-
-一句话告诉 AI：
-
-> "回滚刚才的配置"
-
-AI 自动执行回滚。
-
----
-
-## 文件说明
-
-| 文件 | 说明 |
-|------|------|
-| `~/.openclaw/openclaw.json` | 主配置文件 |
-| `~/.openclaw/openclaw.json.before{agentId}bak` | 变更前自动备份 |
-| `~/.openclaw/workspace-{name}/` | Agent 工作区 |
-| `~/.openclaw/logs/gateway.log` | 日志文件，排查问题用 |
-
----
-
-## 常见问题
+## 其他问题
 
 | 问题 | 原因 | 解决 |
 |------|------|------|
@@ -162,34 +168,13 @@ AI 自动执行回滚。
 | 消息发到了别的机器人 | 账号混淆 | 确认用正确的机器人对话 |
 | 飞书机器人没响应 | 未开启事件订阅 | 用一键创建链接 |
 
----
 
-## 一句话总结
-
-> **告诉 AI "创建新机器人 + 名称和用途"，剩下的全部自动完成。**
-
----
-
-## 安装
-
-### 方式一：clawhub 安装 （推荐）
-
-```bash
-# 安装到 ~/.openclaw/workspace/skills
-npx clawhub@latest install openclaw-new-agent
-```
-
-### 方式二：手动下载
-
-```bash
-git clone https://github.com/itzhouq/openclaw-new-agent.git
-```
-
-或直接从 GitHub 下载 SKILL.md，手动放入 `~/.openclaw/openclaw/skills/` 目录。
-
----
 
 ## 发布日志
+
+### v1.2.0 (2026-03-29)
+
+- 说明文档&常见问题
 
 ### v1.1.0 (2026-03-28)
 
