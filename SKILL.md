@@ -8,7 +8,7 @@ keywords:
   - multi-agent
   - chatbot
   - robot
-version: 1.0.0
+version: 1.2.1
 author: Zhou Quan
 homepage: https://clawhub.com
 repository: https://github.com/itzhouq/openclaw-new-agent

@@ -6,7 +6,7 @@
 
 介绍视频：https://www.bilibili.com/video/BV16fXLBkEwo
 
-演示视频：（预计3月29日更新） https://space.bilibili.com/29606169
+演示视频：https://www.bilibili.com/video/BV1cUXaBsEM1
 
 ## 痛点：官方配置太复杂，容易改错
 
