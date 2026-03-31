@@ -55,7 +55,7 @@ git clone https://github.com/itzhouq/openclaw-new-agent.git ~/.openclaw/workspac
 
 如果确实安装失败或者网络问题无法下载，可以联系我发你，有问题也欢迎call我或者提交issue。
 
-<img src="assets/wechat.png" alt="wechat" width="25%" height="25%" />
+<img src="https://pic.itzhouq.cn/wechat.png" alt="wechat" width="25%" height="25%" />
 
 ## 二、一键创建飞书机器人
 
@@ -63,9 +63,9 @@ git clone https://github.com/itzhouq/openclaw-new-agent.git ~/.openclaw/workspac
 
 直接生成包含 WebSocket 事件订阅的模板应用，无需手动配置权限。生成完后显示 AppId 和 appSecret 页面不要关闭后面要用。
 
-<img src="https://github.com/itzhouq/openclaw-new-agent/blob/master/assets/image-20260326175903868.png" alt="创建飞书机器人" style="zoom:50%;" />
+<img src="https://pic.itzhouq.cn/image-20260326175903868.png" alt="创建飞书机器人" style="zoom:50%;" />
 
-<img src="https://github.com/itzhouq/openclaw-new-agent/blob/master/assets/image-20260326180114565.png" alt="创建飞书机器人2" style="zoom:50%;" />
+<img src="https://pic.itzhouq.cn/image-20260326180114565.png" alt="创建飞书机器人2" style="zoom:50%;" />
 
 ## 三：确认基本信息
 
@@ -73,7 +73,7 @@ git clone https://github.com/itzhouq/openclaw-new-agent.git ~/.openclaw/workspac
 
 示例："创建一个新机器人：码字精，用于写作辅助"
 
-<img src="https://github.com/itzhouq/openclaw-new-agent/blob/master/assets/image-20260326180008946.png" alt="确认机器人" style="zoom:50%;" />
+<img src="https://pic.itzhouq.cn/image-20260326180008946.png" alt="确认机器人" style="zoom:50%;" />
 
 AI 会自动询问：App ID & App Secret（没有？点击上面链接创建）
 
@@ -81,7 +81,7 @@ AI 会自动询问：App ID & App Secret（没有？点击上面链接创建）
 
 核心是把这两个信息发给机器人。机器人名称、职责、工作区文件夹名称等是可选调整项目，默认即可。
 
-<img src="https://github.com/itzhouq/openclaw-new-agent/blob/master/assets/image-20260326180234755.png" alt="确认机器人" style="zoom:100%;" />
+<img src="https://pic.itzhouq.cn/image-20260326180234755.png" alt="确认机器人" style="zoom:100%;" />
 
 到这里，Openclaw 已经在自动创建新的 Agent，备份，修改配置文件。下面列举的是 AI 做的事你不需要改动。
 
@@ -97,7 +97,7 @@ AI 会自动询问：App ID & App Secret（没有？点击上面链接创建）
 
 你会收到一条类似消息。
 
-<img src="assets/image-20260329015924649.png" alt="image-20260329015924649" width="50%" height="50%" />
+<img src="https://pic.itzhouq.cn/image-20260329015924649.png" alt="image-20260329015924649" width="50%" height="50%" />
 
 可能稍微有点出入（跟具体你使用的模型有关系）。
 
@@ -107,7 +107,7 @@ AI 会自动询问：App ID & App Secret（没有？点击上面链接创建）
 
 飞书有个通知，你点进去就能跟新机器人对话。
 
-<img src="assets/image-20260329020142441.png" alt="image-20260329020142441" width="50%" height="50%" />
+<img src="https://pic.itzhouq.cn/image-20260329020142441.png" alt="image-20260329020142441" width="50%" height="50%" />
 
 随便跟新机器人发个消息。这部分目的是让机器人自动配置 allowFrom 。
 
@@ -119,7 +119,7 @@ AI 会自动询问：App ID & App Secret（没有？点击上面链接创建）
 
 稍微等待一会儿，给主机器人（不是新的）发个消息：我已经向新机器人发了消息，完成后后续配置。
 
-<img src="https://github.com/itzhouq/openclaw-new-agent/blob/master/assets/image-20260326180334922.png" alt="验证" style="zoom:50%;" />
+<img src="https://pic.itzhouq.cn/image-20260326180334922.png" alt="验证" style="zoom:50%;" />
 
 类似这样的消息，说明主机器人完成了配置。
 
@@ -129,7 +129,7 @@ AI 会自动询问：App ID & App Secret（没有？点击上面链接创建）
 
 如果你遇到机器人没回复，继续往后看（模型执行有一定的随机性）。
 
-<img src="assets/image-20260329021244794.png" alt="image-20260329021244794" width="50%" height="50%" />
+<img src="https://pic.itzhouq.cn/image-20260329021244794.png" alt="image-20260329021244794" width="50%" height="50%" />
 
 ## 常见问题：新机器人不回你
 
@@ -137,17 +137,17 @@ AI 会自动询问：App ID & App Secret（没有？点击上面链接创建）
 
 再给新的机器人随便发个消息。观察终端，如果能看到下面的关键信息：
 
-![image-20260329021611819](assets/image-20260329021611819.png)
+![image-20260329021611819](https://pic.itzhouq.cn/image-20260329021611819.png)
 
 复制这个 OU 开头的标识码手动放在 `~/openclaw/openclaw.json`中。
 
 新启动一个终端执行：`cd .openclaw && open .` 最终打开 `openclaw.json`
 
-![image-20260329022140372](assets/image-20260329022140372.png)
+![image-20260329022140372](https://pic.itzhouq.cn/image-20260329022140372.png)
 
 操作：
 
-![image-20260329022431694](assets/image-20260329022431694.png)
+![image-20260329022431694](https://pic.itzhouq.cn/image-20260329022431694.png)
 
 保存后终端中执行：`openclaw gateway restart` 重启网关。
 
@@ -158,6 +158,8 @@ AI 会自动询问：App ID & App Secret（没有？点击上面链接创建）
 ## 常见问题：新机器人不回你老机器人也挂了
 
 懒得写，看我演示视频介绍怎么排查吧。
+
+[008-🚀OpenClaw多Agent实战保姆级教程](https://www.bilibili.com/video/BV1cUXaBsEM1)
 
 ## 其他问题
 
