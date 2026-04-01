@@ -174,6 +174,20 @@ AI 会自动询问：App ID & App Secret（没有？点击上面链接创建）
 
 ## 发布日志
 
+### V1.3.0(2026-04-01)
+
+[Chongxi Dai](https://github.com/daixiaoxiao) [@daixiaoxiao](https://github.com/daixiaoxiao)
+
+- 添加了 default Agent 说明
+
+- 添加了 session.dmScope 配置
+
+- 添加了完整的 bindings 配置
+
+### v1.2.0 (2026-03-30)
+
+- 文档更新
+
 ### v1.2.0 (2026-03-29)
 
 - 说明文档&常见问题
