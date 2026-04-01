@@ -187,11 +187,46 @@ grep "{agentId}" ~/.openclaw/logs/gateway.log | grep "received message from"
     }
   },
   "agents": {
+    // 【新增】default —— 新增的默认 Agent，保持不变
+    // 作用：作为主助手，处理所有未指定 Agent 的消息
+    // ────────────────────────────────────────────
+    "default": { ... },
     "list": [
       { "id": "main" },
       { "id": "{agentId}", "workspace": "/path/to/workspace-{name}" }
     ]
-  }
+  },
+  "session": {
+    // ────────────────────────────────────────────
+    // 【修改】dmScope
+    // 原值: "per-channel-peer"
+    // 新值: "per-account-channel-peer"
+    // 原因: 多账户模式下需要按「机器人账号 + 渠道 + 对话对象」
+    //       三者组合隔离会话记忆，否则不同机器人的会话会互相串
+    // ────────────────────────────────────────────
+    "dmScope": "per-account-channel-peer"
+  },
+  // ════════════════════════════════════════════════
+  // 【新增】bindings —— 整个字段都是新加的
+  // 作用：将不同飞书机器人账户的消息路由到对应的 agent
+  // 没有这个配置，gateway 无法正确分发消息，可能导致失联
+  // ════════════════════════════════════════════════
+  "bindings": [
+    {
+      "agentId": "main",                    // → 路由到主助手
+      "match": {
+        "channel": "feishu",
+        "accountId": "default"              // ← 对应 channels.feishu.accounts.default
+      }
+    },
+    {
+      "agentId": "{agentId}",           // → 路由到新 Agent
+      "match": {
+        "channel": "feishu",
+        "accountId": "{agentId}"        // ← 对应 channels.feishu.accounts.{agentId}
+      }
+    }
+  ]
 }
 ```
 
